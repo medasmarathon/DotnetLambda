@@ -1,5 +1,6 @@
-namespace DotnetLambda
+namespace RandomProductFunction
 {
+    [Serializable]
     public class RandomProduct
     {
         public int Id { get; set; }

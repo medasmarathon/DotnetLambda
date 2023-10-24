@@ -1,8 +1,6 @@
 using Amazon.Lambda.Annotations.APIGateway;
 using Amazon.Lambda.Annotations;
-using DotnetLambda.Persistence;
 using Amazon.Lambda.Core;
-using DotnetLambda;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 namespace RandomProductFunction
@@ -29,9 +27,10 @@ namespace RandomProductFunction
 
         [LambdaFunction]
         [HttpApi(LambdaHttpMethod.Post, "/randomproduct")]
-        public IHttpResult Set([FromServices] RandomProductStore store, [FromBody] RandomProduct info)
+        public IHttpResult Set([FromServices] RandomProductStore store, [FromBody] RandomProduct info, ILambdaContext context)
         {
             var result = store.UpsertRandomProduct(info);
+            context.Logger.Log($"info id: {info.Id}, info summary: {info.Summary}");
             return HttpResults.Created($"/randomproduct/{result.Id}", result);
         }
     }
