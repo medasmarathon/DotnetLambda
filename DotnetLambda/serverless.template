@@ -3,7 +3,7 @@
   "Transform": "AWS::Serverless-2016-10-31",
   "Description": "This template is partially managed by Amazon.Lambda.Annotations (v1.0.0.0).",
   "Resources": {
-    "RandomProductFunctionFunctionsFunctionHandlerGenerated": {
+    "RandomProductFunctionFunctionsGetProductGenerated": {
       "Type": "AWS::Serverless::Function",
       "Metadata": {
         "Tool": "Amazon.Lambda.Annotations",
@@ -20,7 +20,7 @@
           "AWSLambdaBasicExecutionRole"
         ],
         "PackageType": "Zip",
-        "Handler": "DotnetLambda::RandomProductFunction.Functions_FunctionHandler_Generated::FunctionHandler",
+        "Handler": "DotnetLambda::RandomProductFunction.Functions_GetProduct_Generated::GetProduct",
         "Events": {
           "RootGet": {
             "Type": "HttpApi",
@@ -32,7 +32,7 @@
         }
       }
     },
-    "RandomProductFunctionFunctionsSetGenerated": {
+    "RandomProductFunctionFunctionsSetProductGenerated": {
       "Type": "AWS::Serverless::Function",
       "Metadata": {
         "Tool": "Amazon.Lambda.Annotations",
@@ -49,7 +49,7 @@
           "AWSLambdaBasicExecutionRole"
         ],
         "PackageType": "Zip",
-        "Handler": "DotnetLambda::RandomProductFunction.Functions_Set_Generated::Set",
+        "Handler": "DotnetLambda::RandomProductFunction.Functions_SetProduct_Generated::SetProduct",
         "Events": {
           "RootPost": {
             "Type": "HttpApi",
