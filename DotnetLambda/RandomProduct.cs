@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace RandomProductFunction
+namespace DotnetLambda
 {
     public class RandomProduct
     {

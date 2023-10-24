@@ -1,7 +1,6 @@
-using System.Text.Json;
 using Amazon.Lambda.Annotations;
+using DotnetLambda.Persistence;
 using Microsoft.Extensions.DependencyInjection;
-using RandomProductFunction;
 
 [LambdaStartup]
 public class Startup

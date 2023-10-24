@@ -1,6 +1,8 @@
 using Amazon.Lambda.Annotations.APIGateway;
 using Amazon.Lambda.Annotations;
 using Amazon.Lambda.Core;
+using DotnetLambda;
+using DotnetLambda.Persistence;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 namespace RandomProductFunction
@@ -12,6 +14,7 @@ namespace RandomProductFunction
         [HttpApi(LambdaHttpMethod.Get, "/randomproduct/{id}")]
         public IHttpResult GetProduct([FromServices] RandomProductStore store, string id)
         {
+            // Just a fake store, it will never return anything because the store is reset for every request (AWS Lambda is stateless)
             var product = store.GetRandomProduct(int.Parse(id));
 
             if (product == null)

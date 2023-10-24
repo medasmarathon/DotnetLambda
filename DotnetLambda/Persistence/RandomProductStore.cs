@@ -1,4 +1,4 @@
-﻿namespace RandomProductFunction
+﻿namespace DotnetLambda.Persistence
 {
     public class RandomProductStore
     {
