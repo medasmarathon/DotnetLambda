@@ -27,7 +27,7 @@ namespace RandomProductFunction
 
         [LambdaFunction]
         [HttpApi(LambdaHttpMethod.Post, "/randomproduct")]
-        public IHttpResult SetProduct([FromServices] RandomProductStore store, [FromBody] RandomProduct info, ILambdaContext context)
+        public IHttpResult SetProduct([FromBody] RandomProduct info, [FromServices] RandomProductStore store, ILambdaContext context)
         {
             var result = store.UpsertRandomProduct(info);
             context.Logger.Log($"info id: {info.Id}, info summary: {info.Summary}");

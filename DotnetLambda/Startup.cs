@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Amazon.Lambda.Annotations;
 using Microsoft.Extensions.DependencyInjection;
 using RandomProductFunction;
